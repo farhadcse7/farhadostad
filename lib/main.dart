@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: true,
       home: HomeScreen(),
       title: 'Ostad app',
@@ -16,6 +18,8 @@ class MyApp extends StatelessWidget {
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,25 +29,25 @@ class HomeScreen extends StatelessWidget {
         elevation: 70,
         backgroundColor: Colors.green,
         centerTitle: true,
-        title: Text('Home',
+        title: const Text('Home',
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24)),
-        leading: Icon(Icons.menu),
-        actions: [Icon(Icons.search)],
+        leading: const Icon(Icons.add_business),
+        actions: const [Icon(Icons.search)],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'This is mod 5 Assignment',
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
             RichText(
-              text: TextSpan(
+              text: const TextSpan(
                 style: TextStyle(
                   fontSize: 18.0,
                   color: Colors.black,

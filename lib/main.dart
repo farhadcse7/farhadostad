@@ -32,7 +32,12 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Home',
             style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24)),
         leading: const Icon(Icons.add_business),
-        actions: const [Icon(Icons.search)],
+        actions: const [
+          Padding(
+            padding: EdgeInsets.all(14),
+            child: Icon(Icons.search),
+          )
+        ],
       ),
       body: Center(
         child: Column(

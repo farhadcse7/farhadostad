@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         toolbarHeight: 70,
-        elevation: 10,
+        elevation: 3,
         backgroundColor: Colors.blue,
         centerTitle: true,
         title: const Text('Profile',

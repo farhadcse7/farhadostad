@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const Text(
-              'This is mod 5 Assignment',
+              'Live Test',
               style: TextStyle(
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                 ),
                 children: [
                   TextSpan(
-                    text: 'My ',
+                    text: 'Farhad ',
                     style: TextStyle(
                       color: Colors.red,
                       fontSize: 24,
@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
                   ),
 
                   TextSpan(
-                    text: 'name ',
+                    text: 'Mia ',
                     style: TextStyle(
                       color: Colors.deepPurple,
                       fontWeight: FontWeight.w600,

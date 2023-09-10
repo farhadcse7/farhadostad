@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
       debugShowCheckedModeBanner: true,
       home: HomeScreen(),
-      title: 'Ostad app',
+      title: 'Profile App',
     );
   }
 }
@@ -25,56 +25,35 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        toolbarHeight: 100,
-        elevation: 70,
-        backgroundColor: Colors.green,
+        toolbarHeight: 70,
+        elevation: 10,
+        backgroundColor: Colors.blue,
         centerTitle: true,
-        title: const Text('Home',
-            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 24)),
-        leading: const Icon(Icons.add_business),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.all(14),
-            child: Icon(Icons.search),
-          )
-        ],
+        title: const Text('Profile',
+            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20)),
       ),
-      body: Center(
+      body: const Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              'Live Test',
-              style: TextStyle(
-                fontSize: 18.0,
-                fontWeight: FontWeight.bold,
-              ),
+            Icon(
+              Icons.account_circle_rounded,
+              color: Colors.green,
+              size: 40,
             ),
-            const SizedBox(height: 15),
-            RichText(
-              text: const TextSpan(
-                style: TextStyle(
+            Text(
+              'Jhon Doe',
+              style: TextStyle(
                   fontSize: 18.0,
-                  color: Colors.black,
-                ),
-                children: [
-                  TextSpan(
-                    text: 'Farhad ',
-                    style: TextStyle(
-                      color: Colors.red,
-                      fontSize: 24,
-                    ),
-                  ),
-
-                  TextSpan(
-                    text: 'Mia ',
-                    style: TextStyle(
-                      color: Colors.deepPurple,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-
-                ],
+                  fontWeight: FontWeight.normal,
+                  color: Colors.green),
+            ),
+            SizedBox(height: 4),
+            Text(
+              'Flutter Batch 4',
+              style: TextStyle(
+                color: Colors.blue,
+                fontSize: 14,
               ),
             ),
           ],

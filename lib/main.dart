@@ -65,13 +65,7 @@ class HomeScreen extends StatelessWidget {
                       fontSize: 24,
                     ),
                   ),
-                  TextSpan(
-                    text: 'phone ',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontSize: 14,
-                    ),
-                  ),
+
                   TextSpan(
                     text: 'name ',
                     style: TextStyle(
@@ -79,10 +73,7 @@ class HomeScreen extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                  TextSpan(
-                    text: 'Your phone name',
-                    style: TextStyle(color: Colors.orange, fontSize: 24),
-                  ),
+
                 ],
               ),
             ),

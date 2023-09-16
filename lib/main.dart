@@ -1,63 +1,60 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  // give me some widget
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: true,
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomeScreen(),
-      title: 'Profile App',
+      title: 'Ostad app',
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        toolbarHeight: 70,
-        elevation: 3,
-        backgroundColor: Colors.blue,
-        centerTitle: true,
-        title: const Text('Profile',
-            style: TextStyle(fontWeight: FontWeight.w400, fontSize: 20)),
+        title: Center(child: Text('My Shopping List')),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.shopping_cart),
+            onPressed: () {},
+          ),
+        ],
+
       ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.account_circle_rounded,
-              color: Colors.green,
-              size: 40,
-            ),
-            Text(
-              'Jhon Doe',
-              style: TextStyle(
-                  fontSize: 18.0,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.green),
-            ),
-            SizedBox(height: 4),
-            Text(
-              'Flutter Batch 4',
-              style: TextStyle(
-                color: Colors.blue,
-                fontSize: 24,
-              ),
-            ),
-          ],
-        ),
+      body: ListView(
+        children: [
+          ListTile(
+            title: Text('Apples'),
+            leading: Icon(Icons.shopping_bag),
+          ),
+          ListTile(
+            title: Text('Bananas'),
+            leading: Icon(Icons.shopping_bag),
+          ),
+          ListTile(
+            title: Text('Bread'),
+            leading: Icon(Icons.shopping_bag),
+          ),
+          ListTile(
+            title: Text('Milk'),
+            leading: Icon(Icons.shopping_bag),
+          ),
+          ListTile(
+            title: Text('Eggs'),
+            leading: Icon(Icons.shopping_bag),
+          ),
+        ],
       ),
     );
   }

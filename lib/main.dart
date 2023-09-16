@@ -53,7 +53,7 @@ class HomeScreen extends StatelessWidget {
               'Flutter Batch 4',
               style: TextStyle(
                 color: Colors.blue,
-                fontSize: 14,
+                fontSize: 24,
               ),
             ),
           ],

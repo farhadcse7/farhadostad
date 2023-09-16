@@ -8,7 +8,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
       title: 'Ostad app',
@@ -23,17 +23,17 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('My Shopping List')),
+        title: const Center(child: Text('My Shopping List')),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart),
+            icon: const Icon(Icons.shopping_cart),
             onPressed: () {},
           ),
         ],
 
       ),
       body: ListView(
-        children: [
+        children: const [
           ListTile(
             title: Text('Apples'),
             leading: Icon(Icons.shopping_bag),

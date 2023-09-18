@@ -9,146 +9,147 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Farhad App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const HomeScreen(),
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Product Cart App',
+      home: ProductList(),
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class ProductList extends StatefulWidget {
+  const ProductList({super.key});
 
-  //image list added from https://picsum.photos/ website and randomly generated from there
-  static const List<String> imagesUrl = [
-    'https://picsum.photos/104',
-    'https://picsum.photos/105',
-    'https://picsum.photos/106',
-    'https://picsum.photos/107',
-    'https://picsum.photos/108',
-    'https://picsum.photos/109',
+  @override
+  State<ProductList> createState() => _ProductListState();
+}
+
+class _ProductListState extends State<ProductList> {
+  final _productList = [
+    ProductItem(name: "Product 1", price: 10.55),
+    ProductItem(name: "Product 2", price: 20.11),
+    ProductItem(name: "Product 3", price: 30.55),
+    ProductItem(name: "Product 4", price: 40.11),
+    ProductItem(name: "Product 5", price: 50.55),
+    ProductItem(name: "Product 6", price: 60.11),
+    ProductItem(name: "Product 7", price: 70.55),
+    ProductItem(name: "Product 8", price: 80.11),
+    ProductItem(name: "Product 9", price: 90.55),
+    ProductItem(name: "Product 10", price: 10.11),
+    ProductItem(name: "Product 11", price: 11.55),
+    ProductItem(name: "Product 12", price: 12.11),
+    ProductItem(name: "Product 13", price: 13.55),
   ];
+
+  final Set<ProductItem> _totalUniqueProduct = {};
+
+  void _handleCount(int index) {
+    if (_productList[index].quantity < 5) {
+      _productList[index].quantity++;
+      _totalUniqueProduct.add(_productList[index]);
+      setState(() {});
+    }
+    if (_productList[index].quantity == 5) {
+      showDialog(
+        barrierDismissible: false,
+        context: context,
+        builder: (context) => AlertDialog(
+          title: const Text("Congratulations!"),
+          content: Text("You've bought 5 ${_productList[index].name}!"),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text("Ok"),
+            ),
+          ],
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //appbar
       appBar: AppBar(
-        title: const Text('Photo Gallery'),
-        centerTitle: true,
+        title: const Center(child: Text("Product List")),
       ),
-      //body
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: Text(
-                'Welcome to My Photo Gallery!',
-                style: TextStyle(fontSize: 24.0),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(16.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search for photos...',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-            ),
-
-            //padding with 6 images using gridview builder
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: GridView.builder(
-                shrinkWrap: true,
-                itemCount: imagesUrl.length,
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 20,
-                ),
-                itemBuilder: (context, index) {
-                  return GridTile(
-                    footer: Container(
-                      color: Colors.white,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10),
-                        child: Center(
-                            child: Text(
-                          "Photo ${index + 1}",
-                          style: const TextStyle(fontSize: 20),
-                        )),
-                      ),
-                    ),
-                    child: GestureDetector(
-                      onTap: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          SnackBar(
-                            content: Text('Image ${index + 1} clicked!'),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        height: 150,
-                        color: Colors.grey,
-                        child: Image.network(
-                          imagesUrl[index],
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-
-            // 3 images with title and subtitle using ListTile
-            SizedBox(
-              child: Column(
+      body: ListView.separated(
+        padding: const EdgeInsets.all(20),
+        itemCount: _productList.length,
+        itemBuilder: (context, index) {
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ListTile(
-                    leading: ClipOval(
-                        child: Image.network('https://picsum.photos/100')),
-                    title: const Text('Photo 1'),
-                    subtitle: const Text('Description for Photo 1'),
+                  Text(
+                    _productList[index].name,
+                    style: Theme.of(context).textTheme.titleLarge,
                   ),
-                  ListTile(
-                    leading: ClipOval(
-                        child: Image.network('https://picsum.photos/101')),
-                    title: const Text('Photo 2'),
-                    subtitle: const Text('Description for Photo 2'),
-                  ),
-                  ListTile(
-                    leading: ClipOval(
-                        child: Image.network('https://picsum.photos/102')),
-                    title: const Text('Photo 3'),
-                    subtitle: const Text('Description for Photo 3'),
+                  Text("Price: ${_productList[index].price}"),
+                ],
+              ),
+              Column(
+                children: [
+                  Text("Counts: ${_productList[index].quantity}"),
+                  ElevatedButton(
+                    onPressed: () => _handleCount(index),
+                    child: const Text("Buy Now"),
                   ),
                 ],
               ),
+            ],
+          );
+        },
+        separatorBuilder: (context, index) => const Divider(height: 20),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.blue,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CartPage(
+                totalProduct: _totalUniqueProduct.length,
+              ),
             ),
+          );
+        },
+        child: const Icon(Icons.shopping_cart),
+      ),
+    );
+  }
+}
 
-            //More spaces
-            const SizedBox(height: 30),
+class ProductItem {
+  final String name;
+  final double price;
+  int quantity;
+  ProductItem({
+    required this.name,
+    required this.price,
+    this.quantity = 0,
+  });
+}
 
-            // Floating upload button
-            FloatingActionButton(
-              onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Photos Uploaded Successfully!'),
-                  ),
-                );
-              },
-              child: const Icon(Icons.upload),
-            ),
-          ],
-        ),
+class CartPage extends StatelessWidget {
+  final int totalProduct;
+  const CartPage({
+    super.key,
+    required this.totalProduct,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(child: Text("Cart")),
+      ),
+      body: Center(
+        child: Text("Total Products: $totalProduct"),
       ),
     );
   }

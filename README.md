@@ -1,6 +1,5 @@
-# farhadostad
+# Photo Gallery Flutter Project by Farhad Mia
 
-Photo Gallery Flutter Project.
 Note: Images are generated randomly from https://picsum.photos/ website.
 
 ## Getting Started

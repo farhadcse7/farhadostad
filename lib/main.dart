@@ -89,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
-                            content: Text('Image ${index + 1} clicked!'),
+                            content: Text('Photo ${index + 1} clicked!'),
                           ),
                         );
                       },

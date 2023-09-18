@@ -10,20 +10,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Farhad App',
+      title: 'Farhad App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   //image list added from https://picsum.photos/ website and randomly generated from there
-  List<String> imagesUrl = [
+  static const List<String> imagesUrl = [
     'https://picsum.photos/104',
     'https://picsum.photos/105',
     'https://picsum.photos/106',
@@ -80,7 +80,7 @@ class HomeScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(10),
                         child: Center(
                             child: Text(
-                          "tile ${index + 1}",
+                          "Photo ${index + 1}",
                           style: const TextStyle(fontSize: 20),
                         )),
                       ),

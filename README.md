@@ -1,16 +1,12 @@
-# farhadostad
+# Product Cart List App
 
-A new Flutter project.
+Note: As per updated instruction into total cart page section only unique product names are counted.
+A new Flutter project. By Farhad Mia.
+
 
 ## Getting Started
+![Screenshot_3](https://github.com/farhadcse7/farhadostad/assets/48383136/77ec6918-4745-46b4-a847-8be04e2cec5e)
 
-This project is a starting point for a Flutter application.
+![Screenshot_5](https://github.com/farhadcse7/farhadostad/assets/48383136/bf597ba3-a5e5-4d2f-8a81-d5a68bb4116d)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot_6](https://github.com/farhadcse7/farhadostad/assets/48383136/740c85c2-f51b-45af-a9ad-99a22379bd5b)

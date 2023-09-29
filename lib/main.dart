@@ -142,6 +142,7 @@ class CartPage extends StatelessWidget {
     required this.totalProduct,
   });
 
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,4 +156,4 @@ class CartPage extends StatelessWidget {
   }
 }
 
-// ended
+

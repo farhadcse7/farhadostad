@@ -4,10 +4,8 @@ A new Flutter project.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-![far2](https://github.com/farhadcse7/farhadostad/assets/48383136/c5449ff0-63ee-4c63-ab85-570a9e11d79e)
-![far1](https://github.com/farhadcse7/farhadostad/assets/48383136/549786c3-dfba-449a-82da-ea5ad4cf406c)
 
-A few resources to get you started if this is your first Flutter project:
 
+![img](https://github.com/farhadcse7/farhadostad/assets/48383136/a9d1791e-d1ca-4193-a443-74831ac2148e)
+![img1](https://github.com/farhadcse7/farhadostad/assets/48383136/836eca24-d99b-4017-a616-408216ae8b74)
 
